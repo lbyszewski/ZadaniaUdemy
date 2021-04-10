@@ -25,7 +25,7 @@ public class Bank {
        person.corespondAdress = adress;
        person.staticAdress = adress;
 
-
+        System.out.println(person.firstName + " " + person.lastName + " " + person.pesel + " " + person.staticAdress.cityName + " " + person.corespondAdress.cityName);
 
 
 
