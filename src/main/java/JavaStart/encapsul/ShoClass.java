@@ -1,14 +1,36 @@
 package JavaStart.encapsul;
 
+import java.util.Scanner;
+
 public class ShoClass {
     public static void main(String[] args) {
-        Client client = new Client("Jan", "Kowalski", true);
 
-        double price = 1200;
+
+        Scanner scanner = new Scanner(System.in);
+
         DiscoutService discoutService = new DiscoutService();
 
-        double discPrice = discoutService.calculateDiscountPrice(client, price);
-        System.out.println("cena przed rabatem: " + price);
-        System.out.println("cena po rabacie: " + discPrice);
+        System.out.println("podaj imię klienta: " );
+        String firstName = scanner.nextLine();
+
+        System.out.println("podaj nazwisko klienta: " );
+        String lastName = scanner.nextLine();
+
+        System.out.println("podaj kwotę zamówienia:  "  );
+        double priceBeforeDiscount = scanner.nextDouble();
+
+        System.out.println("podaj czy jest premium czy nie: ");
+        boolean premium = scanner.hasNextBoolean();
+
+        Client client = new Client(firstName, lastName, premium);
+        System.out.println("Dokonaj wyboru:");
+
+                    if (premium == true){
+                        double priceAfter = discoutService.calculateDiscountPrice(client, priceBeforeDiscount);
+                        System.out.println(" zniżka po rabacie dla klienta wynosi" + " " + priceAfter);
+                    } else  if( premium == false){
+                        double priceBefor = discoutService.calculateDiscountPrice(client, priceBeforeDiscount);
+                        System.out.println(" zniżka po rabacie dla klienta wynosi" + " " + priceBefor);
+                    }
     }
 }
