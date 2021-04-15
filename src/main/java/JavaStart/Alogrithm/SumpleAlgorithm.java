@@ -10,6 +10,11 @@ public class SumpleAlgorithm {
         System.out.println("podaj rozmiar tablicy: " );
         int insertValue = scanner.nextInt();
 
+        int sum = getSum(scanner, insertValue);
+        System.out.println( "suma liczb wynosi: " + sum);
+    }
+
+    private static int getSum(Scanner scanner, int insertValue) {
         int [] tab = new int[insertValue];
         int sum =0 ;
 
@@ -25,6 +30,6 @@ public class SumpleAlgorithm {
              }
 
         }
-        System.out.println( "suma liczb wynosi: " + sum);
+        return sum;
     }
 }
