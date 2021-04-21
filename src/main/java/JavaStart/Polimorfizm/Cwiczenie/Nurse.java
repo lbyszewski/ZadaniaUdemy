@@ -15,4 +15,6 @@ public class Nurse extends Person{
     public void setOvertime(double overtime) {
         this.overtime = overtime;
     }
+
+
 }
