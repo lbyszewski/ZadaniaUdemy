@@ -9,10 +9,10 @@ public class Barman {
 
         public Drink creatDrink(String nameofDrink , int portionA, int portionB, int portionC){
                 Drink drink = new Drink();
-                drink.getIngregient().getName();
-                drink.getIngregient().getMininliters(portionA);
-                drink.getIngregient().getMininliters(portionB);
-                drink.getIngregient().getMininliters(portionC);
+                drink.getIngregient().setName(nameofDrink);
+                drink.getIngregient().setMininliters(portionA);
+                drink.getIngregient().setMininliters(portionB);
+                drink.getIngregient().setMininliters(portionC);
 
             return drink;
 

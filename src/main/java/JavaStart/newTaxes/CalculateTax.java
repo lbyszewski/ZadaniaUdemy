@@ -34,12 +34,19 @@ public class CalculateTax {
     public double calculateSalary(double salary){
         double standardPrice = 2500;
         double result = 0;
+        double tax = ((salary - standardPrice) * 17/100 );
+        double health = (salary * 9/100);
+        double result2 = 0;
         if (salary <= standardPrice){
              result = salary * 9/100;
              double finalResultation = salary - result;
             return finalResultation;
         } else {
-            double result2 = (salary * 9/100) - ((salary - standardPrice) * 17/100 )   ;
+                if ( health > tax){
+                    result2 = health - tax ;
+                } else {
+                    result2 = tax - health;
+                }
             double finalResult = salary - result2 ;
             return finalResult;
         }
